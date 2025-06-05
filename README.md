@@ -6,6 +6,8 @@ This is my personal portfolio website built using **React.js** and **Tailwind CS
 
 ### Live Site
 
+https://nithesh-shetty-portfolio.vercel.app/
+
 ---
 
 ### Technologies Used

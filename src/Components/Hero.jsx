@@ -6,7 +6,7 @@ function Hero() {
   return (
     <>
       <section
-        id="home"
+        id="/"
         className="  h-screen flex flex-col p-4 justify-center text-center items-center bg-gradient-to-r from-white via-blue-100 to-blue-200"
       >
         <h2 className="tex-lg">Hi I am, </h2>
@@ -22,14 +22,16 @@ function Hero() {
           I love building clean, modern UIs with React, Redux, Tailwind, and
           JavaScript.
         </p>
-        <motion.button
+        <motion.a
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 0.4 }}
+          href="/nithesh_shetty_resume.pdf"
+          download
           className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg hover:scale-105 transition-all"
         >
           Download Resume
-        </motion.button>
+        </motion.a>
         <a href="#about" className="mt-10 animate-bounce text-blue-700">
           <ChevronDown />
         </a>

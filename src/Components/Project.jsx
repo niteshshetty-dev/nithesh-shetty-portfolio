@@ -6,8 +6,8 @@ const projects = [
     title: "Portfolio Website",
     description: "A scrollable React portfolio using Tailwind CSS.",
     tech: "React, Tailwind CSS, Framer Motion",
-    github: "",
-    demo: "",
+    github: "https://github.com/niteshshetty-dev/nithesh-shetty-portfolio",
+    demo: "https://nithesh-shetty-portfolio.vercel.app/",
   },
   {
     title: "E-commerce Frontend",
