@@ -5,7 +5,11 @@ import { projects } from "../data/Projects";
 const Projects = () => (
   <section id="project" className="py-16 px-6 bg-white text-[#0f172a]">
     <div className="max-w-6xl mx-auto">
-      <h2 className="text-3xl font-semibold mb-8 text-center">Projects</h2>
+      <h2 className="text-3xl font-semibold mb-4 text-center">Projects</h2>
+      <p className="text-2xl font-normal text-gray-400 mb-8 text-center">
+        Not perfect, but every project reflects my journey toward professional
+        excellence.
+      </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
