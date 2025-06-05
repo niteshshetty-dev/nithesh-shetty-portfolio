@@ -1,8 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Spiral as Hamburger, Spiral } from "hamburger-react";
+import { navTab } from "../data/NavTab";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+
+      {
+        threshold: 0.6,
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <header>
@@ -14,22 +38,21 @@ function Header() {
               </h1>
             </section>
             <div>
-              <ul className="hidden md:flex gap-6  ">
-                <li>
-                  <a href="/">Home</a>
-                </li>
-                <li>
-                  <a href="#about">About</a>
-                </li>
-                <li>
-                  <a href="#skills">Skills</a>
-                </li>
-                <li>
-                  <a href="#project">Project</a>
-                </li>
-                <li>
-                  <a href="#contact">Contact</a>
-                </li>
+              <ul className="hidden md:flex gap-6">
+                {navTab.map((nav) => (
+                  <li key={`${nav.id}`}>
+                    <a
+                      className={`${
+                        `#${activeSection}` === `${nav.href}`
+                          ? "text-blue-600 font-semibold"
+                          : "text-gray-600"
+                      } transition`}
+                      href={`${nav.href}`}
+                    >
+                      {nav.Tab}
+                    </a>
+                  </li>
+                ))}
               </ul>
               <button
                 className="md:hidden"
@@ -42,21 +65,20 @@ function Header() {
           {isMenuOpen && (
             <div>
               <ul className="flex flex-col  md:hidden bg-white p-4 border text-sm space-y-2  border-blue-100 z-40 rounded-md shadow-lg text-[#0f172a]">
-                <li>
-                  <a href="#home">Home</a>
-                </li>
-                <li>
-                  <a href="#about">About</a>
-                </li>
-                <li>
-                  <a href="#skills">Skills</a>
-                </li>
-                <li>
-                  <a href="#project">Project</a>
-                </li>
-                <li>
-                  <a href="#contact">Contact</a>
-                </li>
+                {navTab.map((nav) => (
+                  <li key={`${nav.id}`}>
+                    <a
+                      className={`${
+                        `#${activeSection}` === `${nav.href}`
+                          ? "text-blue-600 font-semibold"
+                          : "text-gray-600"
+                      } transition`}
+                      href={`${nav.href}`}
+                    >
+                      {nav.Tab}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           )}

@@ -6,7 +6,7 @@ function Hero() {
   return (
     <>
       <section
-        id="/"
+        id="home"
         className="  h-screen flex flex-col p-4 justify-center text-center items-center bg-gradient-to-r from-white via-blue-100 to-blue-200"
       >
         <h2 className="tex-lg">Hi I am, </h2>
