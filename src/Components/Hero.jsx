@@ -26,7 +26,7 @@ function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 0.4 }}
-          href="/nithesh_shetty_resume.pdf"
+          href="/nithesh_shetty_resume_june.pdf"
           download
           className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg hover:scale-105 transition-all"
         >
